@@ -16,6 +16,7 @@ class GAMEVIEWPORTSYNC_API UViewportSyncSettings : public UDeveloperSettings
 
 	UViewportSyncSettings()
 		: bSyncByDefault(true)
+		, bShowOverlay(false)
 		, FollowActorSmoothSpeed(100.0f)
 	{}
 
@@ -23,18 +24,18 @@ class GAMEVIEWPORTSYNC_API UViewportSyncSettings : public UDeveloperSettings
 	
 public:
 	/* Should our viewports sync by default */
-	UPROPERTY(config, EditAnywhere)
+	UPROPERTY(config, EditAnywhere, Category = "Viewport")
 	bool bSyncByDefault;
 
 	/* Should we display an overlay with details on the Viewport */
-	UPROPERTY(config, EditAnywhere)
+	UPROPERTY(config, EditAnywhere, Category = "Viewport")
 	bool bShowOverlay;
 
 	/*
 	 * Speed at which our viewports should update to the desired actor target
 	 * This shouldn't be modified unless you *really* need to
 	 */
-	UPROPERTY(config, EditAnywhere, AdvancedDisplay)
+	UPROPERTY(config, EditAnywhere, AdvancedDisplay, Category = "Viewport")
 	float FollowActorSmoothSpeed;
 };
 
